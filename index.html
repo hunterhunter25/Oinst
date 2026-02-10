@@ -3,37 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوابة المطور أحمد للاستخبارات الرقمية | AHMED OSINT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>بوابة المطور أحمد الاستخباراتية | AHMED OSINT ELITE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root {
-            --neon-blue: #00f2ff;
-            --deep-blue: #0a192f;
-            --card-gray: #112240;
-            --text-silver: #ccd6f6;
-        }
+        :root { --neon: #00f2ff; --bg: #050a14; --card: #0d1626; --text: #ccd6f6; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; }
+        header { background: rgba(5, 10, 20, 0.95); padding: 50px 20px; text-align: center; border-bottom: 3px solid var(--neon); box-shadow: 0 0 30px rgba(0, 242, 255, 0.2); }
+        header h1 { font-family: 'Orbitron', sans-serif; font-size: 2.8rem; color: var(--neon); text-shadow: 0 0 15px var(--neon); margin: 0; }
+        .container { max-width: 1300px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .card { background: var(--card); border-radius: 15px; padding: 25px; border: 1px solid #1e2d4a; transition: 0.3s ease-in-out; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-10px); border-color: var(--neon); box-shadow: 0 0 20px rgba(0, 242, 255, 0.15); }
+        .icon-box { font-size: 2.5rem; color: var(--neon); margin-bottom: 15px; text-align: center; }
+        h3 { color: #fff; margin-bottom: 10px; font-size: 1.4rem; text-align: center; }
+        .desc { font-size: 0.9rem; color: #8892b0; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
+        .input-group { margin-top: auto; }
+        input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #1e2d4a; background: #050a14; color: var(--neon); margin-bottom: 10px; outline: none; box-sizing: border-box; }
+        .btn { display: block; width: 100%; background: transparent; color: var(--neon); border: 2px solid var(--neon); padding: 10px; border-radius: 8px; font-weight: bold; text-align: center; text-decoration: none; cursor: pointer; transition: 0.3s; }
+        .btn:hover { background: var(--neon); color: #000; box-shadow: 0 0 20px var(--neon); }
+        .badge { background: rgba(0, 242, 255, 0.1); color: var(--neon); padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; align-self: center; margin-bottom: 10px; }
+        footer { text-align: center; padding: 40px; margin-top: 60px; background: #020c1b; border-top: 1px solid var(--neon); }
+        .rights { color: var(--neon); font-weight: bold; font-family: 'Orbitron'; }
+    </style>
+</head>
+<body>
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--deep-blue);
-            color: var(--text-silver);
-            margin: 0; padding: 0;
-            overflow-x: hidden;
-        }
+<header>
+    <h1>AHMED OSINT ELITE V3</h1>
+    <p>المنصة المتكاملة للمطور أحمد | أدوات استخبارات المصادر المفتوحة</p>
+</header>
 
-        /* هيدر احترافي بتأثير نيون */
-        header {
-            background: rgba(10, 25, 47, 0.9);
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 2px solid var(--neon-blue);
-            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
-        }
+<div class="container">
+    <div class="grid">
+        
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-user-ninja"></i></div>
+            <span class="badge">Social Recon</span>
+            <h3>كاشف مواقع التواصل</h3>
+            <p class="desc"><strong>الوظيفة:</strong> تبحث في 1500+ موقع (انستغرام، تيك توك، فيسبوك) لإيجاد أي حساب مرتبط بهذا الاسم.</p>
+            <div class="input-group">
+                <input type="text" id="userInput" placeholder="Username">
+                <button class="btn" onclick="run('user')">بدء البحث الشامل</button>
+            </div>
+        </div>
 
-        header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-phone-volume"></i></div>
+            <span class="badge">Tele-Recon</span>
+            <h3>تتبع الهاتف الدولي</h3>
+            <p class="desc"><strong>الوظيفة:</strong> كشف الدولة، المشغل، والاسم المسجل (Truecaller) والارتباطات السحابية للرقم.</p>
+            <div class="input-group">
+                <input type="text" id="phoneInput" placeholder="+201xxxxxxx">
+                <button class="btn" onclick="run('phone')">فحص الرقم</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-eye"></i></div>
+            <span class="badge">AI Recon</span>
+            <h3>محرك التعرف على الوجوه</h3>
+            <p class="desc"><strong>الوظيفة:</strong> إذا رفعت صورة شخص، هذا المحرك يجد لك جميع الصور الأخرى له على الإنترنت والحسابات المرتبطة به.</p>
+            <div class="input-group">
+                <button class="btn" onclick="window.open('https://pimeyes.com/en', '_blank')">فتح محرك الوجه</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-map-marked-alt"></i></div>
+            <span class="badge">Geo-IP</span>
+            <h3>محدد الموقع الجغرافي</h3>
+            <p class="desc"><strong>الوظيفة:</strong> كشف موقع الـ IP على الخريطة، مزود الخدمة، ومدى خطورة المستخدم (VPN/Proxy).</p>
+            <div class="input-group">
+                <input type="text" id="ipInput" placeholder="8.8.8.8">
+                <button class="btn" onclick="run('ip')">تحديد الموقع</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-plane-arrival"></i></div>
+            <span class="badge">Transit Tracking</span>
+            <h3>تتبع الطائرات والسفن</h3>
+            <p class="desc"><strong>الوظيفة:</strong> تتبع حركة الطائرات (FlightRadar24) والسفن في الوقت الحقيقي حول العالم لكشف التحركات.</p>
+            <div class="input-group">
+                <button class="btn" onclick="window.open('https://www.flightradar24.com/', '_blank')">رادار الطائرات</button>
+                <button class="btn" onclick="window.open('https://www.marinetraffic.com/', '_blank')" style="margin-top:5px">رادار السفن</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-code"></i></div>
+            <span class="badge">Cyber Recon</span>
+            <h3>كاشف تقنيات المواقع</h3>
+            <p class="desc"><strong>الوظيفة:</strong> أدخل رابط أي موقع لمعرفة التقنيات المستخدمة فيه (Server, CMS, API) والبحث عن ثغرات.</p>
+            <div class="input-group">
+                <input type="text" id="webInput" placeholder="example.com">
+                <button class="btn" onclick="run('web')">فحص التقنيات</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-biohazard"></i></div>
+            <span class="badge">Data Breach</span>
+            <h3>تسريبات البيانات</h3>
+            <p class="desc"><strong>الوظيفة:</strong> كشف ما إذا كانت كلمات مرور الهدف أو إيميله قد تسربت في أي اختراق سابق.</p>
+            <div class="input-group">
+                <input type="text" id="mailInput" placeholder="email@gmail.com">
+                <button class="btn" onclick="run('mail')">كشف التسريب</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon-box"><i class="fas fa-history"></i></div>
+            <span class="badge">Archive Recon</span>
+            <h3>أرشيف الإنترنت</h3>
+            <p class="desc"><strong>الوظيفة:</strong> مشاهدة "النسخ القديمة" المحذوفة من المواقع أو حسابات التواصل حتى لو قام الهدف بحذفها.</p>
+            <div class="input-group">
+                <input type="text" id="archiveInput" placeholder="URL">
+                <button class="btn" onclick="run('archive')">مشاهدة الأرشيف</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>جميع الحقوق محفوظة للمطور <span class="rights">أحمد</span> © 2026</p>
+    <p style="opacity: 0.5; font-size: 0.8rem;">تم البرمجة لخدمة التحقيق الجنائي الرقمي والـ OSINT</p>
+</footer>
+
+<script>
+    function run(type) {
+        let val;
+        if(type === 'user') {
+            val = document.getElementById('userInput').value;
+            if(!val) return alert("أدخل اليوزر!");
+            window.open(`https://whatsmyname.app/?q=${val}`, '_blank');
+            window.open(`https://www.google.com/search?q=site:instagram.com "${val}" OR site:facebook.com "${val}"`, '_blank');
+        } else if(type === 'phone') {
+            val = document.getElementById('phoneInput').value;
+            window.open(`https://www.truecaller.com/search/global/${val}`, '_blank');
+        } else if(type === 'ip') {
+            val = document.getElementById('ipInput').value;
+            window.open(`https://scamalytics.com/ip/${val}`, '_blank');
+        } else if(type === 'web') {
+            val = document.getElementById('webInput').value;
+            window.open(`https://builtwith.com/${val}`, '_blank');
+        } else if(type === 'mail') {
+            val = document.getElementById('mailInput').value;
+            window.open(`https://haveibeenpwned.com/`, '_blank');
+        } else if(type === 'archive') {
+            val = document.getElementById('archiveInput').value;
+            window.open(`https://web.archive.org/web/*/${val}`, '_blank');
+        }
+    }
+</script>
+
+</body>
+</html>
             color: var(--neon-blue);
             text-shadow: 0 0 10px var(--neon-blue);
             margin: 0;
